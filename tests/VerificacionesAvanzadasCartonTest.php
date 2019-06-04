@@ -3,6 +3,7 @@
 namespace Bingo;
 
 use PHPUnit\Framework\TestCase;
+/** hola **/
 
 class VerificacionesAvanzadasCartonTest extends TestCase {
 
