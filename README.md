@@ -1,6 +1,6 @@
 # Trabajo Práctico Integrador - 2019
 
-[![Build Status](https://travis-ci.org/dagostinoips/TPBingo2019.svg?branch=master)](https://travis-ci.org/dagostinoips/TPBingo2019)
+[![Build Status](https://travis-ci.org/siriusdan/TPBingo2019.svg?branch=master)](https://travis-ci.org/dagostinoips/TPBingo2019)
 
 ![Selection_497](https://user-images.githubusercontent.com/14078528/58498174-e1148d80-8153-11e9-9c45-626c9a33858f.png)
 
@@ -20,7 +20,7 @@
 
 - **Importante** Por ahora trabajar con el ejemplo de números provisto en el repositorio. No hay que hacer un generador de bingos automáticos.
 - Realizar un fork de este repositorio.
-- Conectar la ejecución de tests con travis. [Instrucciones](https://github.com/dagostinoips/TPBingo2019/wiki/Como-conectar-un-proyecto-con-travis)
+- Conectar la ejecución de tests con travis. [Instrucciones](https://github.com/siriusdan/TPBingo2019/wiki/Como-conectar-un-proyecto-con-travis)
 - Completar los tests de la clase `tests/VerificacionesAvanzadasCartonTest.php`
 - Verificar que pasen para la clase CartonEjemplo, pero fallen para la clase CartonJs.
 - Luego de verificar que los tests fallen (con un commit), arreglar la clase CartonJs para que no falle más.
