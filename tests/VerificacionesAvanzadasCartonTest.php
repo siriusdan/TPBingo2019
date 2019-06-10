@@ -105,6 +105,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
        }
       }
       $this-> assertTrue($min > $max);
+      $max = $min;
     }
   }
 
