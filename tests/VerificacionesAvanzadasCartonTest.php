@@ -71,9 +71,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testTresCeldasIndividuales() {
     $carton = new CartonEjemplo;
     foreach ($carton -> columnas() as $columnas){
-      $i=0;
       $j=0;
       foreach ($columnas as $numeros){
+       $i=0;
        if($numeros != 0){
          $i++;
        }
