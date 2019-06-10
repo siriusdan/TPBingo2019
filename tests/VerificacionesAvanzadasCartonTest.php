@@ -83,7 +83,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
         }
         $this-> assertTrue($c == 3);
     }
-
+   }
   /**
    * Verifica que los números de las columnas izquierdas son menores que los de
    * las columnas a la derecha.
