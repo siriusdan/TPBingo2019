@@ -9,8 +9,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que los números del carton se encuentren en el rango 1 a 90.
    */
-  public function testUnoANoventa() {
-    $carton = new CartonEjemplo;
+     /**
+	    * @param $carton
+	    *
+	    * @dataProvider cartonProvider
+	    */
+  public function testUnoANoventa(CartonInterface $carton) {
     foreach($carton -> numerosDelCarton() as $numeros){
       $this->assertTrue($numeros <= 90 && $numeros >= 1);
     } 
@@ -19,8 +23,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que cada fila de un carton tenga exactamente 5 celdas ocupadas.
    */
-  public function testCincoNumerosPorFila() {
-    $carton = new CartonEjemplo;
+      /**
+	    * @param $carton
+	    *
+	    * @dataProvider cartonProvider
+	    */
+  public function testCincoNumerosPorFila(CartonInterface $carton) {
     foreach($carton->filas() as $filas){
       $contador = 0;
       foreach($filas as $numeros){
@@ -35,8 +43,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que para cada columna, haya al menos una celda ocupada.
    */
-  public function testColumnaNoVacia() {
-    $carton = new CartonEjemplo;
+      /**
+	    * @param $carton
+	    *
+	    * @dataProvider cartonProvider
+	    */
+  public function testColumnaNoVacia(CartonInterface $carton) {
     foreach ($carton -> columnas() as $columnas){
       $band = 0;
       foreach ($columnas as $numeros){
@@ -51,8 +63,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que no haya columnas de un carton con tres celdas ocupadas.
    */
-  public function testColumnaCompleta() {
-    $carton = new CartonEjemplo;
+      /**
+	    * @param $carton
+	    *
+	    * @dataProvider cartonProvider
+	    */
+  public function testColumnaCompleta(CartonInterface $carton) {
     foreach ($carton -> columnas() as $columnas){
       $band = 0;
       foreach ($columnas as $numeros){
@@ -68,8 +84,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que solo hay exactamente tres columnas que tienen solo una celda
    * ocupada.
    */
-   public function testTresCeldasIndividuales() {
-        $carton = new CartonEjemplo;
+      /**
+	    * @param $carton
+	    *
+	    * @dataProvider cartonProvider
+	    */ 
+  public function testTresCeldasIndividuales(CartonInterface $carton) {
         $ci=0;
         foreach ($carton -> columnas() as $columnas)
         {
@@ -92,8 +112,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que los números de las columnas izquierdas son menores que los de
    * las columnas a la derecha.
    */
-  public function testNumerosIncrementales() {
-    $carton = new CartonEjemplo;
+      /**
+	    * @param $carton
+	    *
+    	* @dataProvider cartonProvider
+    	*/
+  public function testNumerosIncrementales(CartonInterface $carton) {
     $max = 0;
     foreach ($carton-> columnas() as $columnas){
       $min = 100;
@@ -112,8 +136,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que en una fila no existan más de dos celdas vacias consecutivas.
    */
-  public function testFilasConVaciosUniformes() {
-    $carton = new CartonEjemplo;
+      /**
+	    * @param $carton
+    	*
+    	* @dataProvider cartonProvider
+    	*/
+  public function testFilasConVaciosUniformes(CartonInterface $carton) {
     $MenosDeDos = True;
     foreach ($carton->filas() as $filas){
       $contador = 0;
@@ -131,5 +159,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
       $this-> assertTrue($MenosDeDos);
     }
   }
-
+  
+  public static function cartonProvider()
+  {
+    return [
+      [new CartonEjemplo],
+      [new CartonJs],
+    ];
+  }
 }
