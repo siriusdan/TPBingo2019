@@ -12,8 +12,8 @@ class CartonJs implements CartonInterface {
 
   public function __construct() {
     $this->numeros_carton = [
-      [4,0,24,31,40,0,0,72,80],
-      [0,13,0,39,48,0,66,0,0],
+      [4,0,24,31,40,0,0,72,0],
+      [0,13,0,39,48,0,66,0,80],
       [1,0,27,0,0,50,0,73,86],
     ];
   }
@@ -23,8 +23,8 @@ class CartonJs implements CartonInterface {
    */
   public function filas() {
     return [
-      [4,0,24,31,40,0,0,72,80],
-      [0,13,0,39,48,0,66,0,0],
+      [4,0,24,31,40,0,0,72,0],
+      [0,13,0,39,48,0,66,0,80],
       [1,0,27,0,0,50,0,73,86],
     ];
   }
@@ -42,7 +42,7 @@ class CartonJs implements CartonInterface {
       [0,0,50],
       [0,66,0],
       [72,0,73],
-      [80,0,86],
+      [0,80,86],
     ];
   }
 
