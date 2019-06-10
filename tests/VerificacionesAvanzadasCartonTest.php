@@ -90,7 +90,17 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * las columnas a la derecha.
    */
   public function testNumerosIncrementales() {
-    $this->assertTrue(TRUE);
+    $carton = new CartonEjemplo;
+    $max = 0;
+    foreach ($carton-> columnas() as $columnas){
+      $min = 100;
+      foreach($columnas as $numeros){
+        if($numeros < $min){
+          $min = $numeros;
+        }
+      }
+      $this-> assertTrue($min > $max);
+    }
   }
 
   /**
