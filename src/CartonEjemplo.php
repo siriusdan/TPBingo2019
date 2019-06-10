@@ -38,7 +38,7 @@ class CartonEjemplo implements CartonInterface {
         columnas[$i][]= $filas[$i];
       }
     }
-    return $columnas
+    return $columnas;
   }
 
   /**
