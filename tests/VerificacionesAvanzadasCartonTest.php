@@ -25,7 +25,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
       $contador = 0;
       foreach($filas as $numeros){
         if($numeros != 0){
-          $contador = $contador + 1;
+          $contador++;
         }
       }
       $this-> assertEquals($contador, 5);
@@ -52,7 +52,16 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que no haya columnas de un carton con tres celdas ocupadas.
    */
   public function testColumnaCompleta() {
-    $this->assertTrue(TRUE);
+    $carton = new CartonEjemplo;
+    foreach ($carton -> columnas() as $columnas){
+      $band = 0;
+      foreach ($columnas as $numeros){
+       if($numeros != 0){
+         $band ++;
+       }
+      }
+      $this-> assertNotEquals($band, 3);
+    }
   }
 
   /**
