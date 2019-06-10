@@ -30,6 +30,7 @@ class CartonJs implements CartonInterface {
    */
   public function columnas() {
     $columnas = [];
+    $columnas[] = [];
     for($i=0;$i<9;$i++){
       foreach($this-> filas() as $filas){
         columnas[$i][]= $filas[$i];
