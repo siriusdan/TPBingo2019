@@ -31,14 +31,25 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testUnoANoventa() {
     $carton = new CartonEjemplo;
-    $this->assertTrue(True, $carton->rangoAceptable());
+    foreach(carton -> numerosDelCarton() as $numeros){
+      $this->assertTrue($numeros <= 90 && $numeros >= 1);
+    } 
   }
 
   /**
    * Verifica que cada fila de un carton tenga exactamente 5 celdas ocupadas.
    */
   public function testCincoNumerosPorFila() {
-    $this->assertTrue(TRUE);
+    $carton = new CartonEjemplo;
+    foreach($carton->filas() as $filas){
+      $contador = 0;
+      foreach($filas as $numeros){
+        if($numeros != 0){
+          $contador = $contador + 1;
+        }
+      }
+      $this-> assertEquals($contador, 5);
+    }
   }
 
   /**
