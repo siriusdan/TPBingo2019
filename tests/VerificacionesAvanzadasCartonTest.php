@@ -69,20 +69,24 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * ocupada.
    */
    public function testTresCeldasIndividuales() {
-    $carton = new CartonEjemplo;
-    $ci=0;
-    foreach ($carton -> columnas() as $columnas)
-    {
-        $c=0;
-        foreach ($columnas as $numeros)
+        $carton = new CartonEjemplo;
+        $ci=0;
+        foreach ($carton -> columnas() as $columnas)
         {
-             if($numeros != 0)
-             {
-                  $c++;
-             }
+            $c=0;
+            foreach ($columnas as $numeros)
+            {
+                 if($numeros != 0)
+                 {
+                      $c++;
+                 }
+            }
+            if ($c==1)
+            {
+                  $ci++;
+            }
         }
-        $this-> assertTrue($c == 3);
-    }
+        $this-> assertTrue($ci == 3);        
    }
   /**
    * Verifica que los números de las columnas izquierdas son menores que los de
