@@ -1,4 +1,4 @@
-<?php
+h<?php
 
 namespace Bingo;
 
@@ -56,7 +56,16 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que para cada columna, haya al menos una celda ocupada.
    */
   public function testColumnaNoVacia() {
-    $this->assertTrue(TRUE);
+    $carton = new CartonEjemplo;
+    foreach ($carton -> columnas() as $columnas){
+      $band = 0;
+      foreach ($columnas as $numeros){
+       if($numeros != 0){
+         $band = 1;
+       }
+       $this-> assertEquals($band, 1);
+      }
+    }
   }
 
   /**
