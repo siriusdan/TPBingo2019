@@ -114,7 +114,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testFilasConVaciosUniformes() {
     $carton = new CartonEjemplo;
-    $MenosDeDos = True
+    $MenosDeDos = True;
     foreach ($carton->filas() as $filas){
       $contador = 0;
       foreach($filas as $numeros){
