@@ -8,8 +8,8 @@ class Carton implements CartonInterface {
   /**
    * {@inheritdoc}
    */
-  public function __construct() {
-    $numeros_carton = numerosDelCarton($this);
+  public function __construct($carton) {
+    $this->numeros_carton=$carton;
   }
   /**
    * {@inheritdoc}
