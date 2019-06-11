@@ -3,7 +3,7 @@ namespace Bingo;
 /**
  * Este es un Carton. 
  */
-class Carton extends FabricaCartones implements CartonInterface {
+class Carton implements CartonInterface {
   protected $numeros_carton = [];
   /**
    * {@inheritdoc}
