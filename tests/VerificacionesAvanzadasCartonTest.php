@@ -10,7 +10,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * @dataProvider cartonProvider
    */
   public function testUnoANoventa(CartonInterface $carton) {
-    foreach($carton -> numerosDelCarton() as $numeros){
+    foreach($this -> numerosDelCarton() as $numeros){
       $this->assertTrue($numeros <= 90 && $numeros >= 1);
     } 
   }
