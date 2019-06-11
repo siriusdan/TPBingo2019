@@ -9,7 +9,7 @@ class Carton implements CartonInterface {
    * {@inheritdoc}
    */
   public function __construct($nums) {
-    $numeros_carton = $this->numerosDelCarton;
+    $numeros_carton = $this->numerosDelCarton();
   }
   /**
    * {@inheritdoc}
