@@ -28,31 +28,124 @@ class FabricaCartones {
   }
 
   protected function validarUnoANoventa($carton) {
-
+    $bandera=True;
+    foreach($carton -> numerosDelCarton() as $numeros){
+      if($numeros > 90 || $numeros < 1){
+        $bandera=False;
+      }
+    } 
+    return $bandera;
   }
 
   protected function validarCincoNumerosPorFila($carton) {
-
+    $bandera=True;
+    foreach($carton->filas() as $filas){
+      $contador = 0;
+      foreach($filas as $numeros){
+        if($numeros != 0){
+          $contador++;
+        }
+      }
+      if($contador!=5){
+        $bandera=False;
+      }
+    }
+    return $bandera;
   }
 
   protected function validarColumnaNoVacia($carton) {
-
+    $bandera=True;
+    foreach ($carton -> columnas() as $columnas){
+      $band = 0;
+      foreach ($columnas as $numeros){
+       if($numeros != 0){
+         $band = 1;
+       }
+      }
+      if($band != 1){
+        $bandera=False;
+      }
+    }
+    return $bandera;
   }
 
   protected function validarColumnaCompleta($carton) {
-
+    $bandera = True;
+    foreach ($carton -> columnas() as $columnas){
+      $band = 0;
+      foreach ($columnas as $numeros){
+       if($numeros != 0){
+         $band ++;
+       }
+      }
+      if($band == 3){
+        $bandera= False;
+      }
+    }
+    return $bandera;
   }
 
   protected function validarTresCeldasIndividuales($carton) {
-
+    $bandera = True;    
+    $ci=0;
+        foreach ($carton -> columnas() as $columnas)
+        {
+            $c=0;
+            foreach ($columnas as $numeros)
+            {
+                 if($numeros != 0)
+                 {
+                  $c++;
+                 }
+            }
+        if ($c==1)
+          {
+              $ci++;
+          }
+       }
+    if($ci != 3){
+      $badnera=False;
+                }
+    return $bandera;
   }
 
   protected function validarNumerosIncrementales($carton) {
-
+    $bandera= True;
+    $max = 0;
+    foreach ($carton-> columnas() as $columnas){
+      $min = 100;
+      foreach($columnas as $numeros){
+        if($numeros != 0){
+        if($numeros < $min){
+          $min = $numeros;
+        }
+       }
+      }
+      if($min > $max){
+        $bandera= False;
+                     }
+      $max = $min;
+    }
+    return $bandera;
   }
 
   protected function validarFilasConVaciosUniformes($carton) {
-
+    $MenosDeDos = True;
+    foreach ($carton->filas() as $filas){
+      $contador = 0;
+      foreach($filas as $numeros){
+        if($numeros==0){
+          $contador++; 
+        }
+        else{
+          $contador = 0; 
+        }
+        if($contador==3){
+           $MenosDeDos = False;
+        }
+      }
+    }
+    return $MenosDeDos;
   }
 
 
