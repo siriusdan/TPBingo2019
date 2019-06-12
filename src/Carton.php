@@ -28,7 +28,7 @@ class Carton implements CartonInterface {
    * {@inheritdoc}
    */
   public function columnas() {
-   return array($this->numeros_carton);
+   return $this->numeros_carton;
   }
   /**
    * {@inheritdoc}
