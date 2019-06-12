@@ -11,7 +11,7 @@ class FabricaCartones {
       while (1){
           $carton = $this->intentoCarton();
 
-          if ($this->cartonEsValido($carton)) {
+          if ($this->cartonEsValido()) {
             return $carton;
           }
       }
