@@ -60,7 +60,7 @@ class FabricaCartones {
 
   protected function validarUnoANoventa($carton) {
     $bandera=True;
-    foreach($this -> numerosDelCarton() as $numeros){
+    foreach($carton -> numerosDelCarton() as $numeros){
       if($numeros > 90 || $numeros < 1){
         $bandera=False;
       }
@@ -70,7 +70,7 @@ class FabricaCartones {
 
   protected function validarCincoNumerosPorFila($carton) {
     $bandera=True;
-    foreach($this->filas() as $filas){
+    foreach($carton->filas() as $filas){
       $contador = 0;
       foreach($filas as $numeros){
         if($numeros != 0){
@@ -86,7 +86,7 @@ class FabricaCartones {
 
   protected function validarColumnaNoVacia($carton) {
     $bandera=True;
-    foreach ($this -> columnas() as $columnas){
+    foreach ($carton -> columnas() as $columnas){
       $band = 0;
       foreach ($columnas as $numeros){
        if($numeros != 0){
@@ -102,7 +102,7 @@ class FabricaCartones {
 
   protected function validarColumnaCompleta($carton) {
     $bandera = True;
-    foreach ($this -> columnas() as $columnas){
+    foreach ($carton -> columnas() as $columnas){
       $band = 0;
       foreach ($columnas as $numeros){
        if($numeros != 0){
@@ -119,7 +119,7 @@ class FabricaCartones {
   protected function validarTresCeldasIndividuales($carton) {
     $bandera = True;    
     $ci=0;
-        foreach ($this -> columnas() as $columnas)
+        foreach ($carton -> columnas() as $columnas)
         {
             $c=0;
             foreach ($columnas as $numeros)
@@ -143,7 +143,7 @@ class FabricaCartones {
   protected function validarNumerosIncrementales($carton) {
     $bandera= True;
     $max = 0;
-    foreach ($this-> columnas() as $columnas){
+    foreach ($carton-> columnas() as $columnas){
       $min = 100;
       foreach($columnas as $numeros){
         if($numeros != 0){
@@ -162,7 +162,7 @@ class FabricaCartones {
 
   protected function validarFilasConVaciosUniformes($carton) {
     $MenosDeDos = True;
-    foreach ($this->filas() as $filas){
+    foreach ($carton->filas() as $filas){
       $contador = 0;
       foreach($filas as $numeros){
         if($numeros==0){
