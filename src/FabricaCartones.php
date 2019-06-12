@@ -8,13 +8,15 @@ class FabricaCartones implements CartonInterface{
   
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-    while(1){
+    $i=0;
+    while($i<20){
         $this->carton = $this->intentoCarton();
-
         if ($this->cartonEsValido()) {
           return $carton;
         }
+        $i++;
     }
+    return $carton;
   }
 
   public function filas() {
@@ -95,9 +97,9 @@ class FabricaCartones implements CartonInterface{
     foreach ($this -> columnas() as $columnas){
       $band = 0;
       foreach ($columnas as $numeros){
-       if($numeros != 0){
-         $band = 1;
-       }
+        if($numeros != 0){
+          $band = 1;
+        }
       }
       if($band != 1){
         $bandera=False;
