@@ -85,7 +85,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
                   $celdasInd++;
             }
         }
-        $this-> assertTrue($celdasInd == 3);        
+        $this-> assertEquals($celdasInd,3);        
    }
   
   /**
