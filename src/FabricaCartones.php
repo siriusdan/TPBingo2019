@@ -17,7 +17,6 @@ class FabricaCartones implements CartonInterface{
 
   public function filas() {
     $filas= [];
-    $filas[]= [];
     for ($i=0;$i<=2;$i++){
       foreach($this->columnas() as $columnas){
         $filas[$i][]=$columnas[$i];
@@ -41,7 +40,11 @@ class FabricaCartones implements CartonInterface{
     }
     return $numeros;
   }
- 
+  
+   public function tieneNumero(int $numero) {
+    return in_array($numero, $this->numerosDelCarton());
+  }
+  
   protected function cartonEsValido() {
     if ($this->validarUnoANoventa() &&
       $this->validarCincoNumerosPorFila() &&
