@@ -12,7 +12,7 @@ class FabricaCartones {
 
         if ($this->cartonEsValido()) {
           return $carton;
-   }
+        }
   }
 
   public function filas() {
@@ -133,7 +133,7 @@ class FabricaCartones {
           }
        }
     if($ci != 3){
-      $badnera=False;
+      $bandera=False;
                 }
     return $bandera;
   }
