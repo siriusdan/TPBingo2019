@@ -15,38 +15,6 @@ class FabricaCartones {
         }
       }
  
-    public function filas() {
-    $filas= [];
-    $filas[]= [];
-    for ($i=0;$i<=2;$i++){
-      foreach($this->columnas() as $columnas){
-        $filas[$i][]=$columnas[$i];
-      }
-    }
-    return $filas;
-  }
-
-    
-    
-  public function columnas() {
-   return $this->numeros_carton;
-  }
-
-    
-    
-  public function numerosDelCarton() {
-    $numeros = [];
-    foreach ($this->filas() as $fila) {
-      foreach ($fila as $celda) {
-        if ($celda != 0) {
-          $numeros[] = $celda;
-        }
-      }
-    }
-    return $numeros;
-  }
-  }
-  
   protected function cartonEsValido($carton) {
     if ($this->validarUnoANoventa($carton) &&
       $this->validarCincoNumerosPorFila($carton) &&
