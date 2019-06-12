@@ -34,7 +34,7 @@ class FabricaCartones implements CartonInterface{
   
   public function filas() {
     $filas= [];
-    $columnas = $this -> carton();
+    $columnas = $this -> carton;
     for ($i=0;$i<=2;$i++){
        $filas[$i]=array(
          $columnas  [0] [$i] , $columnas  [1] [$i] , $columnas [2] [$i],
