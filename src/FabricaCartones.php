@@ -21,7 +21,7 @@ class FabricaCartones {
     $filas= [];
     $filas[]= [];
     for ($i=0;$i<=2;$i++){
-      foreach($this->columnas() as $columnas){
+      foreach($carton->columnas() as $columnas){
         $filas[$i][]=$columnas[$i];
       }
     }
@@ -34,7 +34,7 @@ class FabricaCartones {
   
   public function numerosDelCarton() {
     $numeros = [];
-    foreach ($this->filas() as $fila) {
+    foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
         if ($celda != 0) {
           $numeros[] = $celda;
