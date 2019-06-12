@@ -6,7 +6,7 @@ class FabricaCartones {
 
   public function generarCarton() {
     for($i=0;$i<20;$i++){
-        $carton = new Carton($this->intentoCarton());
+        $carton = $this->intentoCarton();
         if ($this->cartonEsValido($carton)) {
           return $carton;
         }
