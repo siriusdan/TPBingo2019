@@ -80,7 +80,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
                       $celdas++;
                  }
             }
-            if ($c==1)
+            if ($celdas==1)
             {
                   $celdasInd++;
             }
