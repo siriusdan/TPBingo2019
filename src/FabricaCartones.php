@@ -4,12 +4,12 @@ namespace Bingo;
 
 class FabricaCartones {
 
-  protected $carton = [];
+  protected $carton= new Carton([]);
   
   public function generarCarton() {
     
     for($i=0;$i<20;$i++){
-        $carton = $this->intentoCarton();
+        $carton->numeros_carton = $this->intentoCarton();
         if ($this->cartonEsValido($carton)) {
           return $carton;
         }
