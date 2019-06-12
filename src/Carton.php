@@ -1,22 +1,16 @@
 <?php
 namespace Bingo;
-/**
- * Este es un Carton. 
- */
+
 class Carton implements CartonInterface {
   protected $numeros_carton = [];
-  /**
-   * {@inheritdoc}
-   */
+
   public function __construct(array $carton) {
     $this->numeros_carton = $carton;
   }
-  /**
-   * {@inheritdoc}
-   */
+
   public function filas() {
     $filas= [];
-    $columnas = $this -> columnas();
+    $columnas = $this -> numeros_carton;
     for ($i=0;$i<=2;$i++){
        $filas[$i]=array(
          $columnas  [0] [$i] , $columnas  [1] [$i] , $columnas [2] [$i],
@@ -26,15 +20,11 @@ class Carton implements CartonInterface {
     }
     return $filas;
   }
-  /**
-   * {@inheritdoc}
-   */
+
   public function columnas() {
    return $this->numeros_carton;
   }
-  /**
-   * {@inheritdoc}
-   */
+
   public function numerosDelCarton() {
     $numeros = [];
     foreach ($this->filas() as $fila) {
@@ -46,9 +36,7 @@ class Carton implements CartonInterface {
     }
     return $numeros;
   }
-  /**
-   * {@inheritdoc}
-   */
+
   public function tieneNumero(int $numero) {
     return in_array($numero, $this->numerosDelCarton());
   }
