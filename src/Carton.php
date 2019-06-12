@@ -15,20 +15,19 @@ class Carton implements CartonInterface {
    * {@inheritdoc}
    */
   public function filas() {
-    return $this->numeros_carton;
+    $filas= [];
+    $filas[]= [];
+    for ($i=0;$i<=2;$i++){
+      foreach($this->columnas() as $columnas){
+        $filas[$i][]=$columnas[$i];
+      }
+    }
   }
   /**
    * {@inheritdoc}
    */
   public function columnas() {
-    $columnas = [];
-    $columnas[] = [];
-    for($i=0;$i<9;$i++){
-      foreach($this-> filas() as $filas){
-        $columnas[$i][]= $filas[$i];
-      }
-    }
-    return $columnas;
+    return $this->numeros_carton;
   }
   /**
    * {@inheritdoc}
