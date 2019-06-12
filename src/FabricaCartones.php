@@ -4,16 +4,45 @@ namespace Bingo;
 
 class FabricaCartones {
 
-  protected $carton= new Carton([]);
+  protected $carton = [];
   
   public function generarCarton() {
-    
-    for($i=0;$i<20;$i++){
-        $carton->numeros_carton = $this->intentoCarton();
-        if ($this->cartonEsValido($carton)) {
-          return $carton;
+    // Algo de pseudo-código para ayudar con la evaluacion.
+      while (1){
+          $carton = $this->intentoCarton();
+
+          if ($this->cartonEsValido($carton)) {
+            return $carton;
+          }
+      }
+  }
+
+  public function filas() {
+    $filas= [];
+    $filas[]= [];
+    for ($i=0;$i<=2;$i++){
+      foreach($this->columnas() as $columnas){
+        $filas[$i][]=$columnas[$i];
+      }
+    }
+    return $filas;
+  }
+
+  public function columnas() {
+   return $carton;
+  }
+  
+  public function numerosDelCarton() {
+    $numeros = [];
+    foreach ($this->filas() as $fila) {
+      foreach ($fila as $celda) {
+        if ($celda != 0) {
+          $numeros[] = $celda;
         }
       }
+    }
+    return $numeros;
+  }
  
   protected function cartonEsValido($carton) {
     if ($this->validarUnoANoventa($carton) &&
