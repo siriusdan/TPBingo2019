@@ -27,7 +27,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
           $contador++;
         }
       }
-      $this-> assertEquals($contador, 5);
+      $this->assertEquals($contador, 5);
     }
   }
 
@@ -36,14 +36,14 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * @dataProvider cartonProvider
    */
   public function testColumnaNoVacia(CartonInterface $carton) {
-    foreach (($carton -> columnas()) as $columnas){
+    foreach (($carton->columnas()) as $columnas){
       $band = 0;
       foreach ($columnas as $numeros){
        if($numeros != 0){
          $band = 1;
        }
       }
-      $this-> assertEquals($band, 1);
+      $this->assertEquals($band, 1);
     }
   }
 
@@ -70,7 +70,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testTresCeldasIndividuales(CartonInterface $carton) {
         $celdasInd=0;
-        foreach (($carton -> columnas()) as $columnas)
+        foreach (($carton->columnas()) as $columnas)
         {
             $celdas=0;
             foreach ($columnas as $numeros)
@@ -80,7 +80,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
                       $celdas++;
                  }
             }
-            if ($c==1)
+            if ($celdas==1)
             {
                   $celdasInd++;
             }
@@ -124,7 +124,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
           else{
               $contador = 0; 
           }
-          if($contador==3){
+          if($contador>=3){
               $MenosDeDos = False;
           }
       }
