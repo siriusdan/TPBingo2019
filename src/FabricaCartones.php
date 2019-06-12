@@ -8,7 +8,7 @@ class FabricaCartones {
   
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-    for($i=0;$i<10;$i++){
+    while(1){
       $this->randomCarton = $this->intentoCarton();
       if(!($this->cartonEsValido())){
         return $this->randomCarton;
