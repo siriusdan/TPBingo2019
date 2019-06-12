@@ -12,11 +12,11 @@ class FabricaCartones implements CartonInterface{
     while($i<20){
         $this->carton = $this->intentoCarton();
         if ($this->cartonEsValido()) {
-          return $carton;
+          return $this->carton;
         }
         $i++;
     }
-    return $carton;
+    return $this->carton;
   }
   protected function cartonEsValido() {
     if ($this->validarUnoANoventa() &&
