@@ -22,7 +22,7 @@ class Carton implements CartonInterface {
         $filas[$i][]=$columnas[$i];
       }
     }
-    return $filas;
+    return array($filas);
   }
   /**
    * {@inheritdoc}
