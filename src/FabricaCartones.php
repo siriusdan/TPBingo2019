@@ -10,7 +10,7 @@ class FabricaCartones {
     while(!($this->cartonEsValido($carton))){
       $carton =new Carton($this->intentoCarton());
     }
-    return $carton;
+    return $carton->columnas();
   }
   
   public function filas() {
