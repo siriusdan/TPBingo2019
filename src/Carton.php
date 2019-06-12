@@ -8,7 +8,7 @@ class Carton implements CartonInterface {
   /**
    * {@inheritdoc}
    */
-  public function __construct($carton) {
+  public function __construct(array $carton) {
     $this->numeros_carton=$carton;
   }
   /**
@@ -22,7 +22,7 @@ class Carton implements CartonInterface {
         $filas[$i][]=$columnas[$i];
       }
     }
-    return array($filas);
+    return $filas;
   }
   /**
    * {@inheritdoc}
