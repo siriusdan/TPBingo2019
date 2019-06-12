@@ -13,7 +13,7 @@ class FabricaCartones implements CartonInterface{
       $c++;
       $this->carton = $this->intentoCarton();
       $bandera = $this->cartonEsValido();
-    }while($bandera == FALSE && $c < 20);
+    }while($bandera == False && $c < 20);
     
     return $this->carton;
   }
@@ -27,9 +27,9 @@ class FabricaCartones implements CartonInterface{
       $this->validarNumerosIncrementales() &&
       $this->validarFilasConVaciosUniformes()
     ) {
-      return TRUE;
+      return True;
     }
-    return FALSE;
+    return False;
   }
   
   public function filas() {
