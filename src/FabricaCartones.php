@@ -8,16 +8,16 @@ class FabricaCartones implements CartonInterface{
   
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-    $i=0;
-    while($i<20){
-        $this->carton = $this->intentoCarton();
-        if ($this->cartonEsValido()) {
-          return $this->carton;
-        }
-        $i++;
-    }
+    $c = 0;
+    do{
+      $c++;
+      $this->carton = $this->intentoCarton();
+      $bandera = $this->cartonEsValido();
+    }while($bandera == FALSE && $c < 20);
+    
     return $this->carton;
   }
+
   protected function cartonEsValido() {
     if ($this->validarUnoANoventa() &&
       $this->validarCincoNumerosPorFila() &&
@@ -34,7 +34,7 @@ class FabricaCartones implements CartonInterface{
   
   public function filas() {
     $filas= [];
-    $columnas = $this -> columnas();
+    $columnas = $this -> carton();
     for ($i=0;$i<=2;$i++){
        $filas[$i]=array(
          $columnas  [0] [$i] , $columnas  [1] [$i] , $columnas [2] [$i],
