@@ -8,7 +8,7 @@ class FabricaCartones {
   
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-         $carton = $this->intentoCarton();
+         $this->$carton = $this->intentoCarton();
 
          if ($this->cartonEsValido()) {
            return $carton;
@@ -27,7 +27,7 @@ class FabricaCartones {
   }
 
   public function columnas() {
-   return $carton;
+   return this->$carton;
   }
   
   public function numerosDelCarton() {
