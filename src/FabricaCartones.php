@@ -18,7 +18,20 @@ class FabricaCartones implements CartonInterface{
     }
     return $carton;
   }
-
+  protected function cartonEsValido() {
+    if ($this->validarUnoANoventa() &&
+      $this->validarCincoNumerosPorFila() &&
+      $this->validarColumnaNoVacia() &&
+      $this->validarColumnaCompleta() &&
+      $this->validarTresCeldasIndividuales() &&
+      $this->validarNumerosIncrementales() &&
+      $this->validarFilasConVaciosUniformes()
+    ) {
+      return TRUE;
+    }
+    return FALSE;
+  }
+  
   public function filas() {
     $filas= [];
     $columnas = $this -> columnas();
@@ -52,19 +65,7 @@ class FabricaCartones implements CartonInterface{
     return in_array($numero, $this->numerosDelCarton());
   }
   
-  protected function cartonEsValido() {
-    if ($this->validarUnoANoventa() &&
-      $this->validarCincoNumerosPorFila() &&
-      $this->validarColumnaNoVacia() &&
-      $this->validarColumnaCompleta() &&
-      $this->validarTresCeldasIndividuales() &&
-      $this->validarNumerosIncrementales() &&
-      $this->validarFilasConVaciosUniformes()
-    ) {
-      return TRUE;
-    }
-    return FALSE;
-  }
+
 
   protected function validarUnoANoventa() {
     $bandera=True;
@@ -78,7 +79,7 @@ class FabricaCartones implements CartonInterface{
 
   protected function validarCincoNumerosPorFila() {
     $bandera=True;
-    foreach($this->filas() as $filas){
+    foreach(($this->filas()) as $filas){
       $contador = 0;
       foreach($filas as $numeros){
         if($numeros != 0){
@@ -94,7 +95,7 @@ class FabricaCartones implements CartonInterface{
 
   protected function validarColumnaNoVacia() {
     $bandera=True;
-    foreach ($this -> columnas() as $columnas){
+    foreach (($this -> columnas()) as $columnas){
       $band = 0;
       foreach ($columnas as $numeros){
         if($numeros != 0){
@@ -117,7 +118,7 @@ class FabricaCartones implements CartonInterface{
          $band ++;
        }
       }
-      if($band == 3){
+      if($band >= 3){
         $bandera= False;
       }
     }
@@ -151,7 +152,7 @@ class FabricaCartones implements CartonInterface{
   protected function validarNumerosIncrementales() {
     $bandera= True;
     $max = 0;
-    foreach ($this-> columnas() as $columnas){
+    foreach (($this-> columnas()) as $columnas){
       $min = 100;
       foreach($columnas as $numeros){
         if($numeros != 0){
@@ -170,7 +171,7 @@ class FabricaCartones implements CartonInterface{
 
   protected function validarFilasConVaciosUniformes() {
     $MenosDeDos = True;
-    foreach ($this->filas() as $filas){
+    foreach (($this->filas()) as $filas){
       $contador = 0;
       foreach($filas as $numeros){
         if($numeros==0){
