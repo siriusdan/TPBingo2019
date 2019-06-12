@@ -16,11 +16,13 @@ class Carton implements CartonInterface {
    */
   public function filas() {
     $filas= [];
-    $filas[]= [];
+    $columnas = $this -> columnas();
     for ($i=0;$i<=2;$i++){
-      foreach($this->columnas() as $columnas){
-        $filas[$i][]=$columnas[$i];
-      }
+       $filas[$i]=array(
+         $columnas  [0] [$i] , $columnas  [1] [$i] , $columnas [2] [$i],
+         $columnas  [3] [$i], $columnas  [4] [$i], $columnas [5] [$i] ,
+         $columnas  [6] [$i]  , $columnas  [7] [$i], $columnas [8] [$i]
+         );
     }
     return $filas;
   }
