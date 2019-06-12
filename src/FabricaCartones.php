@@ -28,7 +28,7 @@ class FabricaCartones {
   }
 
   public function columnas() {
-   return $this->numerosDelCarton();
+   return $this->randomCarton;
   }
   
   public function numerosDelCarton() {
