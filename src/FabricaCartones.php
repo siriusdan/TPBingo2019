@@ -8,11 +8,13 @@ class FabricaCartones implements CartonInterface{
   
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
+    while(1){
         $this->carton = $this->intentoCarton();
 
         if ($this->cartonEsValido()) {
           return $carton;
         }
+    }
   }
 
   public function filas() {
