@@ -3,14 +3,11 @@
 namespace Bingo;
 
 class FabricaCartones {
-
-  protected $carton = [];
   
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-      while (1){
-          $carton = $this->intentoCarton();
-
+      for($i=0;$i<10;$i++){
+          $carton =new Carton($this->intentoCarton());
           if ($this->cartonEsValido($carton)) {
             return $carton;
           }
