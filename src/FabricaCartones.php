@@ -8,12 +8,10 @@ class FabricaCartones {
   
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-      while (1){
-          $carton = $this->intentoCarton();
+         $carton = $this->intentoCarton();
 
-          if ($this->cartonEsValido()) {
-            return $carton;
-          }
+         if ($this->cartonEsValido()) {
+           return $carton;
       }
   }
 
